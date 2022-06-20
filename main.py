@@ -3,6 +3,8 @@
 import requests
 from zipfile import ZipFile
 import os
+import csv
+from pprint import pprint
 
 if __name__ == '__main__':
     #Downloading ZIP file
@@ -24,4 +26,10 @@ if __name__ == '__main__':
         print(file_names)
         csv_file_path=file.extract(file_names[0])
         print(csv_file_path)
+    #Reading CSV file
+    with open(local_path,mode='r') as csv_file:
+        reader = csv.DictReader(csv_file)
+        row = next(reader)
+        print(type(row))
+        pprint(row)
     
