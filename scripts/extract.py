@@ -63,7 +63,7 @@ def save_new_raw_data():
                     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
                     #Write headers as first line
                     writer.writerow(fieldnames)
-                    for row in header:
+                    for row in reader:
                         #write all rows in file
                         writer.writerow(row)
                         
